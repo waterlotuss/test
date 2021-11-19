@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/* Header  */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #990099;
+  box-shadow: 0px 0px 50px rgb(248, 34, 248);
+  z-index: 1;
+}
+#logo {
+  font-family: "Merienda", cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: aliceblue;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+.navbar li {
+  list-style: none;
+}
+.navbar li a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: aliceblue;
+}
+.navbar li a:hover {
+  color: rgb(4, 255, 171);
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger .line1,
+.burger .line3 {
+  width: 30px;
+  height: 2px;
+  margin: 5px;
+  background-color: aliceblue;
+  transition: all 0.3s ease;
+}
+.burger .line2 {
+  width: 20px;
+  height: 2px;
+  margin: 5px;
+  background-color: aliceblue;
+  transition: all 0.1s ease;
+}
+
+@media screen and (max-width: 1260px) {
+  body {
+    overflow-x: hidden; /*FOCUS change width & overflow-x hidden*/
+  }
+  .navbar {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navbar {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    right: 0px;
+    top: 10vh;
+    height: 25vh;
+    width: 35%;
+    background-color: #990099;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    /* transition: transform 0.5s ease-in; */
+  }
+  /* with javaScript  */
+  .navbar li {
+    opacity: 0;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .navbar li a span {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+.fixed {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+/* with javaScript  */
+/*-------------------------------------------*/
+
+/* Section About  */
+section {
+  padding: 100px 100px 0;
+}
+.about .row,
+.hours .row,
+.contact .row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.about .row .col50,
+.hours .row .col50,
+.contact .row .col50 {
+  position: relative;
+  width: 48%;
+}
+.about .row .col50 .about-text {
+  padding-left: 150px;
+}
+.about .titleText,
+.recipes .titleText,
+.hours .titleText,
+.contact .titleText,
+.location .titleText,
+.menu .titleText,
+.menuinfo .title .titleText {
+  font-family: "Cormorant Upright", serif;
+  font-size: 6rem;
+  font-weight: 700;
+  padding: 80px 0 20px;
+  letter-spacing: 2px;
+}
+.about .titleP,
+.hours .titleP,
+.contact .titleP,
+.menuinfo .menucontent .menucontentBx .titleP {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px; /*should use rem*/
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  padding-top: 30px;
+  /* text-align: justify;  */
+}
+.about .row .col50 .imgBx {
+  min-height: 480px;
+  filter: drop-shadow(1px 12px 8px rgb(73, 72, 72));
+}
+.about .row .col50 .imgBx,
+.hours .row .col50 .imgBx,
+.contact .row .col50 .imgBx {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.about .row .col50 .imgBx img,
+.hours .row .col50 .imgBx img,
+.contact .row .col50 .imgBx img {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  /* width: 100%; */
+  max-width: 100%; /*CHANGED*/
+  /* height: 100%; */
+  height: auto; /*CHANGED TO AUTO responsive images*/
+  object-fit: cover;
+}
+
+/* Section Recipes  */
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title-line .line4 {
+  width: 400px;
+  height: 6px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: #c203c2;
+}
+.recipes .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+.recipes .content .box {
+  width: 410px;
+  margin: 20px;
+  filter: drop-shadow(0px 4px 3px rgb(248, 230, 243));
+}
+.recipes .content .box .imgBx {
+  position: relative;
+  width: 100%;
+  height: 272px;
+}
+.recipes .content .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.recipes .content .box .text {
+  padding: 15px 0;
+}
+.recipes .content .box .text h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Section hours & contact  */
+.hours {
+  padding: 7% 15% 0;
+}
+.hours .row .col50 .hours-text {
+  padding-left: 100px;
+}
+.hours .row .col50 .imgBx {
+  min-height: 400px;
+  /* box-shadow: 2px 3px 8px 1px rgb(252, 235, 247); */
+  /* filter: drop-shadow(0px 4px 3px rgb(248, 230, 243)); CHANGED */
+}
+.hours .titleText,
+.hours .titleP,
+.contact .titleText,
+.contact .titleP {
+  text-align: center;
+}
+.contact {
+  padding: 7% 7% 0;
+}
+.contact .row .col50 .contact-text {
+  padding-right: 300px;
+}
+.contact .row .col50 .imgBx {
+  min-height: 425px;
+  /* box-shadow: 2px 3px 8px 1px rgb(250, 232, 245); */
+  filter: drop-shadow(0px 4px 3px rgb(248, 230, 243)); /*CHANGED*/
+}
+
+/* Section Google Map  */
+.direction {
+  padding: 7% 7%;
+  text-align: center;
+}
+.direction .map {
+  padding-top: 30px;
+}
+.direction .map iframe {
+  width: 100%; /*NOTICE*/
+}
+
+/* Section Menu  */
+.menu {
+  padding: 0 0 7%; /*❓❓❓❓❓ */
+  /* background-color: #f5d7f5; */
+  background: url(image/img18.png);
+  background-size: cover;
+}
+.menu .titleText {
+  color: rgb(239, 236, 253);
+}
+.menu .content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 40px;
+}
+.menu .content .box {
+  width: 410px;
+  margin: 20px;
+  padding: 0 40px 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.menu .content .box .imgBx {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.menu .content .box .text {
+  text-align: left;
+}
+.menu .content .box .text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  padding-top: 30px;
+}
+/* Section menuinfo  */
+.menuinfo .title {
+  padding-bottom: 50px;
+}
+.menuinfo .menucontent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.menuinfo .menucontent .menucontentBx {
+  /* max-width: calc(50% - 40px); ?????????????????????? */
+  max-width: 100%;
+  padding: 60px 40px;
+  margin: 20px;
+  background: #f6eff8;
+}
+.menuinfo .menucontent .menucontentBx .titleP {
+  margin-top: 30px;
+}
+.menuinfo .menucontent .menucontentBx input type {
+  margin-top: 30px;
+}
+.conpyrightText {
+  text-align: center;
+  padding: 80px 0 20px;
+}
+.fab {
+  margin: 5px;
+}
+@media (max-width: 991px) {
+  .about .row,
+  .hours .row,
+  .contact .row {
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .about .row .col50,
+  .hours .row .col50,
+  .contact .row .col50 {
+    position: relative;
+    width: 100%;
+  }
+  .about .row .col50 .imgBx,
+  .hours .row .col50 .imgBx,
+  .contact .row .col50 .imgBx {
+    height: 300px;
+    margin: 20px;
+  }
+  .about .row .titleText,
+  .about .row .titleP {
+    text-align: center;
+  }
+  .about .row .titleP {
+    padding-bottom: 20px;
+  }
+  .contact .row .col50 .contact-text {
+    padding-right: 0px;
+  }
+  .hours .row .col50 .hours-text {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 550px) {
+  .about .row .about-text .titleText,
+  .about .row .about-text .titleP {
+    text-align: center;
+  }
+}
