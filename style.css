@@ -11,8 +11,8 @@ header {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: #990099;
-  box-shadow: 0px 0px 50px rgb(248, 34, 248);
+  background-color: #990021;
+  box-shadow: 0px 0px 50px rgb(248, 34, 70);
   z-index: 1;
 }
 #logo {
